@@ -19,22 +19,14 @@ const CountersList = () => {
         setCounters(initialState)
     }
     const handleIncrement = (id) => {
-        let newCounters = [...counters]
-        newCounters[id].value += 1
-        setCounters(newCounters)
-
-        // setCounters(
-        // const countersNew = counters.map((counter, id) => (
-        //         counter.id === id ? counter.value += 1 : counter
-        //     )
-        // )
-        // setCounters(countersNew)
-
+        let updatedCounters = [...counters]
+        updatedCounters.find( counter => counter.id === id).value += 1
+        setCounters(updatedCounters)
     }
     const handleDecrement = (id) => {
-        let newCounters = [...counters]
-        newCounters[id].value -= 1
-        setCounters(newCounters)
+        let updatedCounters = [...counters]
+        updatedCounters.find( counter => counter.id === id).value -= 1
+        setCounters(updatedCounters)
     }
     return (
         <>
